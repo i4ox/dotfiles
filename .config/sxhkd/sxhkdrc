@@ -1,0 +1,146 @@
+# DESC_MOD: Run the terminal
+super + Return
+  alacritty
+
+# DESC_MOD: Open the browser
+super + e
+  firefox
+
+# DESC_MOD: Open the telegram
+super + t
+  telegram-desktop
+
+# TODO: Add file manager
+
+####################################################################################
+
+# DESC_I3: Reload i3 config
+super + shift + c
+	i3-msg reload
+
+# DESC_I3: Restart i3 session
+super + shift + r
+	i3-msg restart
+
+# DESC_I3: Kill i3 session
+super + shift + e
+	i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
+
+# DESC_I3: Kill the program
+super + shift + q
+	i3-msg kill
+
+# DESC_I3: Change the focus
+super + {h,j,k,l}
+	{i3-msg focus left, \
+	i3-msg focus down, \
+	i3-msg focus up, \
+	i3-msg focus right}
+super + {Left, Down, Up, Right}
+	{i3-msg focus left, \
+	i3-msg focus down, \
+	i3-msg focus up, \
+	i3-msg focus right}
+
+# DESC_I3: Move the window
+super + shift + {h,j,k,l}
+	{i3-msg move left, \
+	i3-msg move down, \
+	i3-msg move up, \
+	i3-msg move right}
+super + shift + {Left,Down,Up,Right}
+	{i3-msg move left, \
+	i3-msg move down, \
+	i3-msg move up, \
+	i3-msg move right}
+
+# DESC_I3: Toggle split
+super + n
+	i3-msg split toggle
+
+# DESC_I3: Toggle fullscreen
+super + f
+	i3-msg fullscreen toggle
+
+# DESC_I3: Switch between workspaces
+super + {1,2,3,4,5,6,7,8,9,0}
+	{i3-msg workspace number 1, \
+	i3-msg workspace number 2, \
+	i3-msg workspace number 3, \
+	i3-msg workspace number 4, \
+	i3-msg workspace number 5, \
+	i3-msg workspace number 6, \
+	i3-msg workspace number 7, \
+	i3-msg workspace number 8, \
+	i3-msg workspace number 9, \
+	i3-msg workspace number 10,
+}
+
+# DESC_I3: Move container to another workspace
+super + shift + {1,2,3,4,5,6,7,8,9,0}
+	{i3-msg move container to workspace number 1, \
+	i3-msg move container to workspace number 2, \
+	i3-msg move container to workspace number 3, \	
+	i3-msg move container to  workspace number 4, \
+	i3-msg move container to  workspace number 5, \
+	i3-msg move container to  workspace number 6, \
+	i3-msg move container to  workspace number 7, \
+	i3-msg move container to  workspace number 8, \
+	i3-msg move container to  workspace number 9, \
+	i3-msg move container to  workspace number 10,
+}
+
+####################################################################################
+# DESC_SYS: Reload the keymaps
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# DESC_SUPER: Show all keymaps
+super + shift + p
+	alacritty -o "font.size=11.0" -e sh -c "~/.scripts/sxhkd-bindings.sh"
+
+# DESC_SYS: Screenshot(Area)
+Print
+  flameshot gui
+
+# DESC_SYS: Screenshot(Screen)
+super + Print
+  flameshot screen
+
+# DESC_SYS: Increase the volume
+XF86AudioRaiseVolume
+  pactl set-sink-volume 0 +5%
+
+# DESC_SYS: Decrease the volume
+XF86AudioLowerVolume
+  pactl set-sink-volume 0 -5%
+
+# DESC_SYS: Mute/Unmute the volume
+XF86AudioMute
+  pactl set-sink-mute 0 toggle
+
+# TODO: Don't work correctly
+# DESC_SYS: Increase the brightness
+XF86MonBrightnessUp
+  xbacklight -inc 20
+
+# DESC_SYS: Decrease the brightness
+XF86MonBrightnessDown
+  xbacklight -dec 20
+
+# INFO: Can't test this feature, I don't have this buttons
+# DESC_SYS: Play the audio
+XF86AudioPlay
+  playerctl play
+
+# DESC_SYS: Pause the audio
+XF86AudioPause
+  playerctl pause
+
+# DESC_SYS: Go to the next audio
+XF86AudioNext
+  playerctl next
+
+# DESC_SYS: Go to the prev audio
+XF86AudioPrev
+  playerctl previous

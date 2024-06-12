@@ -39,3 +39,8 @@ set $term alacritty
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 floating_modifier $mod
+
+# Exec
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
+exec --no-startup-id flameshot

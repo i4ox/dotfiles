@@ -12,6 +12,6 @@ var (
 	barPosition   = Top
 	transparency  = Low
 	blur          = None
-	shadow        = true
+	shadowValue   = true
 	cornerRadius  = Medium
 )
