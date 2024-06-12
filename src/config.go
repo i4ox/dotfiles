@@ -11,7 +11,7 @@ var (
 	barCmd        = "polybar" // Can be "polybar" and "i3bar"
 	barPosition   = Top
 	transparency  = Low
-	blur          = None
+	blur          = Medium
 	shadowValue   = true
 	cornerRadius  = Medium
 )
