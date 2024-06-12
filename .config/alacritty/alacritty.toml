@@ -1,103 +1,40 @@
-[colors]
-draw_bold_text_with_bright_colors = true
-
-[cursor]
-unfocused_hollow = false
-
-[cursor.style]
-blinking = "Always"
-shape = "Beam"
-
-[env]
-TERM = "alacritty"
-
-[font]
-builtin_box_drawing = true
-size = 13.0
-
-[font.bold]
-style = "Bold"
-
-[font.bold_italic]
-style = "Bold Italic"
-
-[font.italic]
-style = "Italic"
-
-[font.normal]
-family = "CaskaydiaCove NF"
-style = "Regular"
-
-[[keyboard.bindings]]
-action = "Paste"
-key = "Y"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "Copy"
-key = "W"
-mods = "Alt"
-
-[scrolling]
-history = 100000
-multiplier = 6
-
-[selection]
-save_to_clipboard = true
-semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
-
-[shell]
-program = "/usr/bin/zsh"
-
-[window]
-dynamic_title = true
-opacity = 1
-title = "Alacritty"
-
-[window.padding]
-x = 10
-#y = 5
-
-[window.class]
-general = "Alacritty"
-instance = "Alacritty"
-
 [colors.primary]
-background = '#191724'
-foreground = '#e0def4'
-
-[colors.cursor]
-text = '#e0def4'
-cursor = '#524f67'
-
-[colors.vi_mode_cursor]
-text = '#e0def4'
-cursor = '#524f67'
-
-[colors.selection]
-text = '#e0def4'
-background = '#403d52'
+background = 'dotSet(color_bg2)'
+foreground = 'dotSet(color_fg3)'
 
 [colors.normal]
-black = '#26233a'
-red = '#eb6f92'
-green = '#31748f'
-yellow = '#f6c177'
-blue = '#9ccfd8'
-magenta = '#c4a7e7'
-cyan = '#ebbcba'
-white = '#e0def4'
+black   = 'dotSet(color_bg3)'
+red     = 'dotSet(color_red1)'
+green   = 'dotSet(color_green1)'
+yellow  = 'dotSet(color_yellow1)'
+blue    = 'dotSet(color_blue1)'
+magenta = 'dotSet(color_purple1)'
+cyan    = 'dotSet(color_aqua1)'
+white   = 'dotSet(color_fg2)'
 
 [colors.bright]
-black = '#6e6a86'
-red = '#eb6f92'
-green = '#31748f'
-yellow = '#f6c177'
-blue = '#9ccfd8'
-magenta = '#c4a7e7'
-cyan = '#ebbcba'
-white = '#e0def4'
+black   = 'dotSet(color_bg4)'
+red     = 'dotSet(color_red2)'
+green   = 'dotSet(color_green2)'
+yellow  = 'dotSet(color_yellow2)'
+blue    = 'dotSet(color_blue2)'
+magenta = 'dotSet(color_purple2)'
+cyan    = 'dotSet(color_aqua2)'
+white   = 'dotSet(color_fg4)'
 
-[colors.hints]
-start = {foreground = '#908caa', background = '#1f1d2e' }
-end = { foreground = '#6e6a86', background = '#1f1d2e' }
+[font]
+size = dotSet(font_size)
+
+[font.normal]
+family = "dotSet(font)"
+style = "dotSet(font_style)"
+
+[shell]
+program = "/bin/zsh"
+
+[window]
+opacity = dotSet(transparency_invert)
+
+[window.padding]
+x = 20
+y = 20
