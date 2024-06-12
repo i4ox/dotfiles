@@ -13,6 +13,7 @@ func main() {
 		{"i3", "config"},
 		{"i3status", "config.toml"},
 		{"picom", "picom.conf"},
+		{"polybar", "config.ini"},
 		{"alacritty", "alacritty.toml"},
 		{"flameshot", "flameshot.ini"},
 	}
@@ -22,7 +23,6 @@ func main() {
 	var transparencyValue float64 = levelToValue(transparency, 0.1, 0.3, 0.5)
 	var blurValue float64 = levelToValue(blur, 1, 3, 5)
 	var cornerRadiusValue float64 = levelToValue(cornerRadius, 4, 8, 16)
-	var barPositionValue string = barPosition.String()
 	var colorNames []string = []string{
 		"bg",
 		"fg",
@@ -77,9 +77,10 @@ func main() {
 	options = append(options, []string{"border", strconv.Itoa(int(borderValue))})
 	options = append(options, []string{"if_i3bar", ifI3Bar()})
 	options = append(options, []string{"bar_cmd", barCmd})
-	options = append(options, []string{"bar_position", barPositionValue})
+	options = append(options, []string{"bar_position", barPosition.String()})
+	options = append(options, []string{"if_bar_bottom", ifBarButtom()})
 	options = append(options, []string{"bar_gap_top", strconv.Itoa(int(gapValue * 2))})
-	options = append(options, []string{"i3bar_height", strconv.Itoa(fontSize + 20)})
+	options = append(options, []string{"bar_height", strconv.Itoa(fontSize + 20)})
 	options = append(options, []string{"corner_radius", strconv.Itoa(int(cornerRadiusValue))})
 	options = append(options, []string{"shadow", strconv.FormatBool(shadowValue)})
 
@@ -157,6 +158,14 @@ func levelToValue(l Level, mn, md, mx float64) float64 {
 
 func ifI3Bar() string {
 	if barCmd == "i3bar" {
+		return ""
+	} else {
+		return "#"
+	}
+}
+
+func ifBarButtom() string {
+	if barPosition.String() == "bottom" {
 		return ""
 	} else {
 		return "#"

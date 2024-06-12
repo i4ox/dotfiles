@@ -22,7 +22,6 @@ bar {
   dotSet(if_i3bar) status_command /home/i4ox/.cargo/bin/i3status-rs /home/i4ox/.config/i3status/config.toml
   dotSet(if_i3bar) position dotSet(bar_position)
   dotSet(if_i3bar) padding dotSet(bar_gap_top) 0 0 0
-  # dotSet(if_i3bar) height dotSet(i3bar_height)
   dotSet(if_i3bar) font pango:dotSet(font) dotSet(font_style) dotSet(font_size)
   dotSet(if_i3bar) colors {
   dotSet(if_i3bar)   background dotSet(color_bg2_a)

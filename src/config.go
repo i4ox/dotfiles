@@ -9,7 +9,7 @@ var (
 	gap           = Low
 	border        = Low
 	barCmd        = "polybar" // Can be "polybar" and "i3bar"
-	barPosition   = Top
+	barPosition   = Bottom
 	transparency  = Low
 	blur          = Medium
 	shadowValue   = true
