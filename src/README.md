@@ -1,10 +1,9 @@
 # Configure
 
 - [X] Alacritty
-- [ ] Starship
-- [ ] i3
+- [X] i3
 - [ ] Polybar
-- [ ] i3status
+- [X] i3status
 - [ ] dunst
 - [ ] rofi
-- [ ] picom
+- [X] picom
