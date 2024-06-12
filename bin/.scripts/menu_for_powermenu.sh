@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 choice=$(printf "Logout\nReboot\nShutdown" | rofi -dmenu)
 case "$choice" in

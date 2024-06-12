@@ -16,6 +16,7 @@ func main() {
 		{"polybar", "config.ini"},
 		{"alacritty", "alacritty.toml"},
 		{"flameshot", "flameshot.ini"},
+		{"rofi", "config.rasi"},
 	}
 
 	var borderValue float64 = levelToValue(border, 2, 4, 8)
@@ -84,9 +85,9 @@ func main() {
 	options = append(options, []string{"corner_radius", strconv.Itoa(int(cornerRadiusValue))})
 	options = append(options, []string{"shadow", strconv.FormatBool(shadowValue)})
 
-	for _, option := range options {
-		fmt.Printf("%s\n", option)
-	}
+	// for _, option := range options {
+	// 	fmt.Printf("%s\n", option)
+	// }
 
 	for i := 0; i < len(configs); i++ {
 		inConfigPath := "../" + ".config/" + configs[i][0] + "/" + configs[i][1]
