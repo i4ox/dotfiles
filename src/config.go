@@ -5,12 +5,12 @@ var (
 	font          = "CaskaydiaCove Nerd Font"
 	fontStyle     = "bold" // Can be "thin", "regular", "medium", "bold"
 	fontSize      = 13
-	theme         = rosepineDark
+	theme         = gruvboxMaterialDark
 	gap           = Low
 	border        = Low
-	bar           = "i3status" // Can be "polybar" and "i3status"
+	barCmd        = "polybar" // Can be "polybar" and "i3bar"
 	barPosition   = Top
-	transparency  = None
+	transparency  = Low
 	blur          = None
 	shadow        = true
 	cornerRadius  = Medium

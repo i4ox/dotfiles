@@ -10,20 +10,17 @@ import (
 
 func main() {
 	var configs = [][]string{
-		// {"i3", "config"},
-		// {"i3status", "config.toml"},
-		// {"rofi", "config"},
-		// {"dunst", "dunstrc"},
+		{"i3", "config"},
+		{"i3status", "config.toml"},
 		{"alacritty", "alacritty.toml"},
-		{"starship", "starship.toml"},
 	}
 
-	// var borderValue float64 = levelToValue(border, 2, 4, 8)
-	// var gapValue float64 = levelToValue(gap, 4, 8, 12)
+	var borderValue float64 = levelToValue(border, 2, 4, 8)
+	var gapValue float64 = levelToValue(gap, 4, 8, 12)
 	var transparencyValue float64 = levelToValue(transparency, 0.1, 0.3, 0.5)
 	// var blurValue float64 = levelToValue(blur, 3, 5, 7)
 	// var cornerRadiusValue float64 = levelToValue(cornerRadius, 4, 8, 16)
-	// var barPositionValue string = barPosition.String()
+	var barPositionValue string = barPosition.String()
 	var colorNames []string = []string{
 		"bg",
 		"fg",
@@ -49,14 +46,14 @@ func main() {
 			options = append(options, []string{"color_" + colorNames[i] + strconv.Itoa(j+1) + "_rgba", HexToRGBA(themeValue[4*i+j], (1.0 - transparencyValue))})
 
 			hexValue := fmt.Sprintf("%.2x", int(255*(1.0-transparencyValue)))
-			tmpStr = themeValue[4*1+j] + hexValue
+			tmpStr = themeValue[4*i+j] + hexValue
 			options = append(options, []string{"color_" + colorNames[i] + strconv.Itoa(j+1) + "_a", tmpStr})
 
 		}
 	}
 
 	// generate base16 colors
-	for i := 0; i < len(colorNames); i++ {
+	for i := 2; i < len(colorNames); i++ {
 		for j := 0; j < 2; j++ {
 			options = append(options, []string{"color_" + colorNames[i] + strconv.Itoa(j+1), themeValue[2*i+4+j]})
 			options = append(options, []string{"color_" + colorNames[i] + strconv.Itoa(j+1) + "_rgba", HexToRGBA(themeValue[2*i+4+j], (1.0 - transparencyValue))})
@@ -73,10 +70,17 @@ func main() {
 	options = append(options, []string{"font_style", fontStyle})
 	options = append(options, []string{"font_size", strconv.Itoa(fontSize)})
 	options = append(options, []string{"transparency_invert", strconv.FormatFloat(1.0-transparencyValue, 'f', 6, 64)})
+	options = append(options, []string{"gap", strconv.Itoa(int(gapValue))})
+	options = append(options, []string{"border", strconv.Itoa(int(borderValue))})
+	options = append(options, []string{"if_i3bar", ifI3Bar()})
+	options = append(options, []string{"bar_cmd", barCmd})
+	options = append(options, []string{"bar_position", barPositionValue})
+	options = append(options, []string{"bar_gap_top", strconv.Itoa(int(gapValue * 2))})
+	options = append(options, []string{"i3bar_height", strconv.Itoa(fontSize + 20)})
 
-	// for _, option := range options {
-	// 	fmt.Printf("%s\n", option)
-	// }
+	for _, option := range options {
+		fmt.Printf("%s\n", option)
+	}
 
 	for i := 0; i < len(configs); i++ {
 		inConfigPath := "../" + ".config/" + configs[i][0] + "/" + configs[i][1]
@@ -144,4 +148,12 @@ func levelToValue(l Level, mn, md, mx float64) float64 {
 		return mx
 	}
 	return 0
+}
+
+func ifI3Bar() string {
+	if barCmd == "i3bar" {
+		return ""
+	} else {
+		return "#"
+	}
 }

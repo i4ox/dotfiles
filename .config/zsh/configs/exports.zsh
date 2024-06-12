@@ -8,12 +8,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 source $HOME/.cargo/env
 
 eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
 eval "$(goenv init -)"
 eval "$(pyenv init -)"
 

@@ -1,0 +1,41 @@
+# Font
+font pango:dotSet(font) dotSet(font_style) dotSet(font_size)
+
+# Gaps
+gaps inner dotSet(gap)
+gaps outer dotSet(gap)
+
+# Border
+default_border pixel dotSet(border)
+default_floating_border pixel dotSet(border)
+
+# Colors
+# class                 border     backgr.   text      indicator   child_border
+client.focused          dotSet(color_bg3)       dotSet(color_bg3)   dotSet(color_fg2)   dotSet(color_bg3)       dotSet(color_bg3)    
+client.focused_inactive dotSet(color_bg3)       dotSet(color_bg3)   dotSet(color_fg2)   dotSet(color_bg3)       dotSet(color_bg3)    
+client.unfocused        dotSet(color_bg1)       dotSet(color_bg3)   dotSet(color_fg2)   dotSet(color_bg1)       dotSet(color_bg1)    
+client.urgent           dotSet(color_yellow1)   dotSet(color_bg3)   dotSet(color_bg2)   dotSet(color_yellow1)   dotSet(color_yellow1)
+client.placeholder      dotSet(color_blue1)     dotSet(color_bg3)   dotSet(color_bg2)   dotSet(color_blue1)     dotSet(color_blue1)  
+
+bar {
+  i3bar_command dotSet(bar_cmd)
+  dotSet(if_i3bar) status_command /home/i4ox/.cargo/bin/i3status-rs /home/i4ox/.config/i3status/config.toml
+  dotSet(if_i3bar) position dotSet(bar_position)
+  dotSet(if_i3bar) padding dotSet(bar_gap_top) 0 0 0
+  # dotSet(if_i3bar) height dotSet(i3bar_height)
+  dotSet(if_i3bar) font pango:dotSet(font) dotSet(font_style) dotSet(font_size)
+  dotSet(if_i3bar) colors {
+  dotSet(if_i3bar)   background dotSet(color_bg2_a)
+  dotSet(if_i3bar)   focused_workspace dotSet(color_green2_a) dotSet(color_green1_a) dotSet(color_bg1_a)
+  dotSet(if_i3bar)   inactive_workspace dotSet(color_bg2_a) dotSet(color_bg1_a) dotSet(color_fg1_a)
+  dotSet(if_i3bar) }
+}
+
+# Variables
+set $mod Mod4
+set $term alacritty
+
+# Float support (DON'T DELETE)
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+floating_modifier $mod
