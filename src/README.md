@@ -2,7 +2,7 @@
 
 - [X] Alacritty
 - [X] i3
-- [ ] Polybar
+- [X] Polybar
 - [X] i3status
 - [ ] dunst
 - [ ] rofi
