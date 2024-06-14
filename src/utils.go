@@ -73,7 +73,6 @@ func HexToRGBA(s string, alpha float64) string {
 	b := uint8(hexCharToNum(s[5])*16 + hexCharToNum(s[6]))
 
 	return fmt.Sprintf("rgba(%d, %d, %d, %f)", r, g, b, alpha)
-
 }
 
 func FormatWord(s string, options [][]string) string {

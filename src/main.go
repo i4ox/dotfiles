@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	var configs = [][]string{
+	configs := [][]string{
 		{"i3", "config"},
 		{"i3status", "config.toml"},
 		{"picom", "picom.conf"},
@@ -45,12 +45,24 @@ func main() {
 	// generate foreground and background colors
 	for i := 0; i < 2; i++ {
 		for j := 0; j < 4; j++ {
-			options = append(options, []string{"color_" + colorNames[i] + strconv.Itoa(j+1), themeValue[4*i+j]})
-			options = append(options, []string{"color_" + colorNames[i] + strconv.Itoa(j+1) + "_rgba", HexToRGBA(themeValue[4*i+j], (1.0 - transparencyValue))})
+			options = append(
+				options,
+				[]string{"color_" + colorNames[i] + strconv.Itoa(j+1), themeValue[4*i+j]},
+			)
+			options = append(
+				options,
+				[]string{
+					"color_" + colorNames[i] + strconv.Itoa(j+1) + "_rgba",
+					HexToRGBA(themeValue[4*i+j], (1.0 - transparencyValue)),
+				},
+			)
 
 			hexValue := fmt.Sprintf("%.2x", int(255*(1.0-transparencyValue)))
 			tmpStr = themeValue[4*i+j] + hexValue
-			options = append(options, []string{"color_" + colorNames[i] + strconv.Itoa(j+1) + "_a", tmpStr})
+			options = append(
+				options,
+				[]string{"color_" + colorNames[i] + strconv.Itoa(j+1) + "_a", tmpStr},
+			)
 
 		}
 	}
@@ -58,12 +70,24 @@ func main() {
 	// generate base16 colors
 	for i := 2; i < len(colorNames); i++ {
 		for j := 0; j < 2; j++ {
-			options = append(options, []string{"color_" + colorNames[i] + strconv.Itoa(j+1), themeValue[2*i+4+j]})
-			options = append(options, []string{"color_" + colorNames[i] + strconv.Itoa(j+1) + "_rgba", HexToRGBA(themeValue[2*i+4+j], (1.0 - transparencyValue))})
+			options = append(
+				options,
+				[]string{"color_" + colorNames[i] + strconv.Itoa(j+1), themeValue[2*i+4+j]},
+			)
+			options = append(
+				options,
+				[]string{
+					"color_" + colorNames[i] + strconv.Itoa(j+1) + "_rgba",
+					HexToRGBA(themeValue[2*i+4+j], (1.0 - transparencyValue)),
+				},
+			)
 
 			hexValue := fmt.Sprintf("%.2x", int(255*(1.0-transparencyValue)))
 			tmpStr = themeValue[2*i+4+j] + hexValue
-			options = append(options, []string{"color_" + colorNames[i] + strconv.Itoa(j+1) + "_a", tmpStr})
+			options = append(
+				options,
+				[]string{"color_" + colorNames[i] + strconv.Itoa(j+1) + "_a", tmpStr},
+			)
 
 		}
 	}
@@ -72,7 +96,10 @@ func main() {
 	options = append(options, []string{"font", font})
 	options = append(options, []string{"font_style", fontStyle})
 	options = append(options, []string{"font_size", strconv.Itoa(fontSize)})
-	options = append(options, []string{"transparency_invert", strconv.FormatFloat(1.0-transparencyValue, 'f', 6, 64)})
+	options = append(
+		options,
+		[]string{"transparency_invert", strconv.FormatFloat(1.0-transparencyValue, 'f', 6, 64)},
+	)
 	options = append(options, []string{"blur", strconv.Itoa(int(blurValue))})
 	options = append(options, []string{"gap", strconv.Itoa(int(gapValue))})
 	options = append(options, []string{"border", strconv.Itoa(int(borderValue))})

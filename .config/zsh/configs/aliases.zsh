@@ -21,5 +21,8 @@ alias free="free -h"
 alias g="git"
 alias glog="git log --graph --decorate --oneline"
 
+# Docker
+alias dockerrm='docker rm -v $(docker ps -aq -f status=exited)'
+
 # DevTools
 alias h="hugo"
