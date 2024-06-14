@@ -5,6 +5,7 @@ alias aptu="sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upg
 alias clsn="clear && fastfetch"
 
 # Files
+alias rmi="rip"
 alias ..="cd .."
 alias ...="cd ../.."
 alias lh="eza -l --color=always --icons --group-directories-first --octal-permissions --no-permissions"
