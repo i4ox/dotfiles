@@ -1,0 +1,40 @@
+set notification-error-bg       "dotSet(color_bg2)" # bg2
+set notification-error-fg       "dotSet(color_red2)" # bright:red
+set notification-warning-bg     "dotSet(color_bg2)" # bg
+set notification-warning-fg     "dotSet(color_yellow2)" # bright:yellow2
+set notification-bg             "dotSet(color_bg2)" # bg2
+set notification-fg             "dotSet(color_green2)" # bright:green
+
+set completion-bg               "dotSet(color_bg4)" # bg4
+set completion-fg               "dotSet(color_fg3)" # fg3
+set completion-group-bg         "dotSet(color_bg3)" # bg3
+set completion-group-fg         "dotSet(color_fg2)" # gray
+set completion-highlight-bg     "dotSet(color_blue2)" # bright:blue
+set completion-highlight-fg     "dotSet(color_bg4)" # bg4
+
+# Define the color in index mode
+set index-bg                    "dotSet(color_bg4)" # bg4
+set index-fg                    "dotSet(color_fg3)" # fg3
+set index-active-bg             "dotSet(color_blue2)" # bright:blue
+set index-active-fg             "dotSet(color_bg4)" # bg4
+
+set inputbar-bg                 "dotSet(color_bg2)" # bg2
+set inputbar-fg                 "dotSet(color_fg3)" # fg3
+
+set statusbar-bg                "dotSet(color_bg4)" # bg4
+set statusbar-fg                "dotSet(color_fg3)" # fg3
+
+set highlight-color             "dotSet(color_yellow2)" # bright:yellow
+set highlight-active-color      "dotSet(color_aqua2)" # bright:cyan
+
+set default-bg                  "dotSet(color_bg2)" # bg2
+set default-fg                  "dotSet(color_fg3)" # fg3
+set render-loading              true
+set render-loading-bg           "dotSet(color_bg2)" # bg2
+set render-loading-fg           "dotSet(color_fg3)" # fg3
+
+# Recolor book content's color
+set recolor-lightcolor          "dotSet(color_bg2)" # bg2
+set recolor-darkcolor           "dotSet(color_fg3)" # fg3
+set recolor                     "true"
+set recolor-keephue             "true"    # keep original color

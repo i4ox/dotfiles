@@ -17,6 +17,7 @@ func main() {
 		{"alacritty", "alacritty.toml"},
 		{"flameshot", "flameshot.ini"},
 		{"rofi", "config.rasi"},
+		{"zathura", "zathurarc"},
 	}
 
 	var borderValue float64 = levelToValue(border, 2, 4, 8)
