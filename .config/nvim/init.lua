@@ -1,4 +1,4 @@
-require "options"
-require "manager"
+require 'config.options'
+require 'config.lazy'
 
-require("keymappings").global()
+require('config.keys').general()

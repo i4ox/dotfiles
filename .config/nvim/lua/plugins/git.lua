@@ -1,12 +1,25 @@
 return {
-  "NeogitOrg/neogit",
-  dependencies = {
-    "lewis6991/gitsigns.nvim",
+  {
+    'lewis6991/gitsigns.nvim',
+    opts = {
+      signs = {
+        add = { text = "▎" },
+        change = { text = "▎" },
+        delete = { text = "" },
+        topdelete = { text = "" },
+        changedelete = { text = "▎" },
+        untracked = { text = "▎" },
+      },
+      signs_staged = {
+        add = { text = "▎" },
+        change = { text = "▎" },
+        delete = { text = "" },
+        topdelete = { text = "" },
+        changedelete = { text = "▎" },
+      },
+      on_attach = function(_)
+        require('config.keys').gitsigns()
+      end,
+    },
   },
-  config = function()
-    require("gitsigns").setup {}
-    require("neogit").setup {}
-
-    require("keymappings").git()
-  end,
 }
