@@ -18,6 +18,7 @@ export NVM_DIR="$HOME/.nvm"
 # Utils
 eval "$(zoxide init zsh)"
 eval "$(ssh-agent -s)"
+eval "$(starship init zsh)"
 
 # Mics
 export CURSOR_TYPE="ibeam"

@@ -26,7 +26,7 @@ kk() {
 
 s() {
   if [[ "$SHELL" =~ "zsh" ]]; then
-    source $HOME/.zshrc
+    source $HOME/.config/zsh/.zshrc
   elif [[ "$SHELL" =~ "bash" ]]; then
     source $HOME/.bash_profile
   fi
