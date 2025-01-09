@@ -1,0 +1,62 @@
+# Main hotkeys
+
+## Terminal
+super + Return
+	ghostty
+
+## Application manager
+super + d
+	dmenu_run
+
+## Print
+Print
+    flameshot gui
+
+super + Print
+    flameshot screen
+
+## Restart
+super + ctrl + r
+	sudo shutdown -r now
+
+## Shutdown
+super + ctrl + p
+	sudo shutdown -h now
+
+## Quit/Restart BSPWM 
+super + shift + {q,r}
+	bspc {quit,wm -r}
+
+# BSPWM hotkeys
+
+## Change window status (tiling,pseudo,floating,fullscreen)
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+	bspc node -g {marked,locked,sticky,private}
+
+## Select the direction to move window
+super + alt + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+## Cancel the direction where window should be open
+super + alt + space
+	bspc node -p cancel
+
+## Focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+## Close or kill the window
+super + {_,shift + }c
+	bspc node -{c}
+
+## Move the tiling windows
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+## Resize the tiling windows
+super + ctrl + {Left,Down,Up,Right}
+	{bspc node -z left -20 0; bspc node -z right -20 0, \
+	bspc node -z bottom 0 20; bspc node -z top 0 20, \
+	bspc node -z bottom 0 -20; bspc node -z top 0 -20, \ 
+	bspc node -z left 20 0; bspc node -z right 20 0}

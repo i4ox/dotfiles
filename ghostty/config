@@ -1,0 +1,8 @@
+font-family = "CaskaydiaCove Nerd Font"
+font-family-bold = "CaskaydiaCove Nerd Font"
+font-style = "Bold"
+font-size = 13
+window-padding-x = 15
+window-padding-y = 15
+theme = nord
+window-decoration = false
