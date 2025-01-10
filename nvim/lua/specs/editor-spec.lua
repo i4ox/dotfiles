@@ -43,4 +43,33 @@ return {
       autopairs.setup()
     end,
   },
+  {
+    "numToStr/Comment.nvim",
+    config = true,
+  },
+  {
+    "kevinhwang91/nvim-ufo",
+    event = "VeryLazy",
+    config = function()
+      require("configs.ufo")
+      -- Folds mappings
+      vim.keymap.set("n", "zR", require("ufo").openAllFolds, { desc = "Open all folds" })
+      vim.keymap.set("n", "zM", require("ufo").closeAllFolds, { desc = "Close all folds" })
+      vim.keymap.set("n", "zr", require("ufo").openFoldsExceptKinds, { desc = "Open folds except kinds" })
+    end,
+  },
+  { 
+    "kevinhwang91/nvim-hlslens",
+    branch = "main",
+    keys = { "*", "#", "n", "N" },
+    config = function()
+      require("configs.hlslens")
+    end,
+  },
+  {
+    "luukvbaal/statuscol.nvim",
+    config = function()
+      require("configs.statuscol")
+    end
+  },
 }

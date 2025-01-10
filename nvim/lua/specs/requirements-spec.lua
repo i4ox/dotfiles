@@ -1,5 +1,6 @@
 return {
   { "nvim-lua/plenary.nvim" },
+  { "kevinhwang91/promise-async" },
   {
     "echasnovski/mini.icons",
     lazy = true,
