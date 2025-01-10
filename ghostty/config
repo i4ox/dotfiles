@@ -4,5 +4,5 @@ font-style = "Bold"
 font-size = 13
 window-padding-x = 15
 window-padding-y = 15
-theme = nord
+theme = onedark
 window-decoration = false
