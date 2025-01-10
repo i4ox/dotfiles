@@ -19,7 +19,10 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup {
-  spec = {},
+  spec = {
+    require("specs.requirements-spec"),
+    require("specs.navigation-spec"),
+  },
   ui = {
     border = "rounded",
     title = "Plugin Manager",

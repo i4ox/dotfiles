@@ -60,3 +60,6 @@ keymap("v", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move current line 
 
 -- Insert semicolon in the end
 keymap("i", "<A-;>", "<Esc>miA;<Esc>`ii", { desc = "Insert semicolon in the end" })
+
+-- Open parent directory
+keymap("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
