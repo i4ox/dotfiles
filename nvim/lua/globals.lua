@@ -3,6 +3,9 @@ local fn = vim.fn
 
 local utils = require("utils")
 
+-- [[ Default language ]]
+vim.cmd([[language en_US.UTF-8]])
+
 -- [[ Custom variables ]]
 g.logging_level = "info"
 
