@@ -8,3 +8,6 @@
 
 -- Enable lazy loading for modules
 vim.loader.enable()
+
+-- Load all the plugins
+require("plugins-loader")
