@@ -9,5 +9,7 @@
 -- Enable lazy loading for modules
 vim.loader.enable()
 
--- Load all the plugins
+-- Load global settings
+require("globals")
+-- Load plugins
 require("plugins-loader")
