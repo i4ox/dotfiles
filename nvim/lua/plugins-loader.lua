@@ -22,6 +22,7 @@ require("lazy").setup {
   spec = {
     require("specs.requirements-spec"),
     require("specs.navigation-spec"),
+    require("specs.colorschemes-spec"),
   },
   ui = {
     border = "rounded",

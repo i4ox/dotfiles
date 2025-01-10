@@ -63,3 +63,11 @@ keymap("i", "<A-;>", "<Esc>miA;<Esc>`ii", { desc = "Insert semicolon in the end"
 
 -- Open parent directory
 keymap("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
+
+-- Telescope support
+keymap("n", "<leader>sf", "<cmd>Telescope find_files<cr>", { desc = "Search the files" })
+keymap("n", "<leader>sw", "<cmd>Telescope grep_string<cr>", { desc = "Search the word" })
+keymap("n", "<leader>sg", "<cmd>Telescope live_grep<cr>", { desc = "Search by rg" })
+keymap("n", "<leader>sb", "<cmd>Telescope buffers<cr>", { desc = "Search the buffers" })
+keymap("n", "<leader>so", "<cmd>Telescope oldfiles<cr>", { desc = "Search the oldfiles" })
+keymap("n", "<leader>sh", "<cmd>Telescope help_tags<cr>", { desc = "Search the help tags" })
