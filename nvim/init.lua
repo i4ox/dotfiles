@@ -21,3 +21,5 @@ require("options")
 require("autocmds")
 -- Load plugins
 require("plugins-loader")
+-- Load keymaps
+require("keymaps")
