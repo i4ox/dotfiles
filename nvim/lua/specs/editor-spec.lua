@@ -58,6 +58,14 @@ return {
       vim.keymap.set("n", "zr", require("ufo").openFoldsExceptKinds, { desc = "Open folds except kinds" })
     end,
   },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "VeryLazy",
+    main = "ibl",
+    config = function()
+      require("configs.indent-blankline")
+    end,
+  },
   { 
     "kevinhwang91/nvim-hlslens",
     branch = "main",
