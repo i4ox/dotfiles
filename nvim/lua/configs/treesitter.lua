@@ -6,6 +6,10 @@ require("nvim-treesitter.configs").setup {
     "luap",
     "vim",
     "vimdoc",
+    -- [[ Markdown stuff ]]
+    "markdown",
+    "markdown_inline",
+    "html",
   },
   ignore_install = {},
   highlight = {
