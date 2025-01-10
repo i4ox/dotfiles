@@ -9,6 +9,10 @@
 -- Enable lazy loading for modules
 vim.loader.enable()
 
+-- Compare the actual and expected versions
+local expected_version = "0.10.3"
+require("utils").is_compatible_version(expected_version)
+
 -- Load global settings
 require("globals")
 -- Load plugins
