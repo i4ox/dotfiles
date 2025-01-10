@@ -15,5 +15,7 @@ require("utils").is_compatible_version(expected_version)
 
 -- Load global settings
 require("globals")
+-- Load options
+require("options")
 -- Load plugins
 require("plugins-loader")
