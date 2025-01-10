@@ -17,5 +17,7 @@ require("utils").is_compatible_version(expected_version)
 require("globals")
 -- Load options
 require("options")
+-- Load autocmds
+require("autocmds")
 -- Load plugins
 require("plugins-loader")
