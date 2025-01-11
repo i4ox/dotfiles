@@ -23,3 +23,5 @@ require("autocmds")
 require("plugins-loader")
 -- Load keymaps
 require("keymaps")
+-- Load custom statusline
+require("custom.statusline")
