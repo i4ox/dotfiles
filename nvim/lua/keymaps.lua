@@ -64,6 +64,13 @@ keymap("i", "<A-;>", "<Esc>miA;<Esc>`ii", { desc = "Insert semicolon in the end"
 -- Open parent directory
 keymap("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
 
+-- Buffers support
+keymap("n", "tk", "<cmd>blast<cr>", { desc = "Open the last buffer", noremap = true })
+keymap("n", "tj", "<cmd>bfirst<cr>", { desc = "Open the first buffer", noremap = true })
+keymap("n", "th", "<cmd>bprev<cr>", { desc = "Open the previous buffer", noremap = true })
+keymap("n", "tl", "<cmd>bnext<cr>", { desc = "Open the next buffer", noremap = true })
+keymap("n", "td", "<cmd>bdelete<cr>", { desc = "Close current buffer", noremap = true })
+
 -- Telescope support
 keymap("n", "<leader>sf", "<cmd>Telescope find_files<cr>", { desc = "Search the files" })
 keymap("n", "<leader>sw", "<cmd>Telescope grep_string<cr>", { desc = "Search the word" })
