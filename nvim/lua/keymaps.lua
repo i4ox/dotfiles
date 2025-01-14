@@ -77,4 +77,5 @@ keymap("n", "<leader>sw", "<cmd>Telescope grep_string<cr>", { desc = "Search the
 keymap("n", "<leader>sg", "<cmd>Telescope live_grep<cr>", { desc = "Search by rg" })
 keymap("n", "<leader>sb", "<cmd>Telescope buffers<cr>", { desc = "Search the buffers" })
 keymap("n", "<leader>so", "<cmd>Telescope oldfiles<cr>", { desc = "Search the oldfiles" })
+keymap("n", "<leader>sy", "<cmd>Telescope yaml_schema<cr>", { desc = "Select the Yaml schema" })
 keymap("n", "<leader>sh", "<cmd>Telescope help_tags<cr>", { desc = "Search the help tags" })
