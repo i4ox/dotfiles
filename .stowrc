@@ -1,3 +1,6 @@
 --target=~/.config
 --ignore=.stowrc
+--ignore=install.sh
 --ignore=README.md
+--ignore=.xinitrc
+--ignore=.Xresources
