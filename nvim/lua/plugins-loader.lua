@@ -27,6 +27,7 @@ require("lazy").setup {
     require("specs.editor-spec"),
     require("specs.lsp-spec"),
     require("specs.markdown-spec"),
+    require("specs.database-spec"),
     require("specs.integrations-spec"),
   },
   ui = {
