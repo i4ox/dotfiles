@@ -1,6 +1,6 @@
 return {
   {
-    "olimorris/onedarkpro.nvim",
+    "EdenEast/nightfox.nvim",
     dependencies = {
       {
         "xiyaowong/transparent.nvim",
@@ -51,13 +51,13 @@ return {
     },
     priority = 1000,
     config = function()
-      require("onedarkpro").setup {
+      require("nightfox").setup {
         options = {
-          transparency = true,
+          transparent = true,
           terminal_colors = true,
         },
       }
-      vim.cmd([[colorscheme onedark]])
+      vim.cmd([[colorscheme nordfox]])
     end,
   },
 }
